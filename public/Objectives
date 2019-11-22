@@ -1,0 +1,8 @@
+Validation 
+-Selected days should combine into a single string
+-Only 1 to 3 days selected is Valid
+-submit button should highlight when 1 to 3 days selected and time is Valid
+
+Appearance 
+-All interactive components should line up horizontally 
+-left side dropdown bar for informal table checking
