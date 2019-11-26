@@ -1,0 +1,637 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron text-left" style="background-color: white">
+	<h4 style="text-align:center"> How to read the table on CSUEB website</h4>
+		<ul>
+		  <li>Ignore the column names and row names</li>
+		  <li>Try too find the days your class meets in the table keeping in mind they are organized by the start time of the class</li>
+		  <li>Once you find your class, then look at the column name you found it in, that's the date of your final, and the row is the time of your final</li>
+		</ul>
+	<h5 style="text-align:center"> Or use this table with more clear names</h5>
+		<ul>
+		  <li>Find the days your class meets in the column name</li>
+		  <li>Fine the time that your class starts in the row names</li>
+		  <li>Like the highlighted example, you can find the time and date of your exam</li>
+			  <ul>
+			  	<li>Eg: my class meets on Tuesdays and Thursdays at 8:30 am</li>
+			  </ul>
+		</ul>
+
+<div>
+	<table width="100%" border=1 cellpadding=1 cellspacing=2>
+		<tr valign=top>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>Hour</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>MWF</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>MW</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>M</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>MF</span></p>
+			</td>
+			<td style="border-style: inset; background: lightblue">
+				<p><span class=rvts1>TuTh</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>Tu</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>WF</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>W</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>Th</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>FS</span></p>
+			</td>
+			<td style="border-style: inset;">
+				<p><span class=rvts1>F</span></p>
+			</td>
+	</tr>
+	<tr valign=top>
+		<td style="border-style: inset;">
+			<p>6 am</p>
+		</td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;background: lightblue">
+			<p>Thurs Dec 12, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;">
+			<p>Thurs Dec 12, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;"></td>
+		<td style="border-style: inset;"></td>
+	</tr>
+	<tr valign=top>
+		<td style="border-style: inset;">
+			<p>7 am</p>
+		</td>
+		<td style="border-style: inset;"><br></td>
+		<td style="border-style: inset;">
+			<p>Mon Dec 9, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Mon Dec 9, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;"></td>
+		<td style="border-style: inset; background: lightblue">
+			<p>Thurs Dec 12, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Tue Dec 10, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;"></td>
+		<td style="border-style: inset;">
+			<p>Wed Dec 11, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Thurs Dec 12, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;"></td>
+		<td style="border-style: inset;"><br></td>
+	</tr>
+	<tr valign=top>
+		<td style="border-style: inset;background: yellow">
+			<p>8 am</p>
+		</td>
+		<td style="border-style: inset;background: yellow">
+			<p>Mon Dec 9, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;background: yellow">
+			<p>Mon Dec 9, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;background: yellow">
+			<p>Mon Dec 9, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;background: yellow">
+			<p>Mon Dec 9, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;background: lightgreen">
+			<p>Thurs Dec 12, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Tue Dec 10, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Fri Dec 13, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Wed Dec 11, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Thurs Dec 12, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Fri Dec 13, 8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+			<p>Fri Dec 13, 8 AM -10 AM</p>
+		</td>
+	</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Fri Dec 13</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 AM -10 AM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Thurs Dec 12</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Fri Dec 13</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>10:15 AM - 12:15 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>12</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Thurs Dec 12</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>13</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Fri Dec 13</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>12:45 PM - 2:45 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>14</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Thurs Dec 12</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>15</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Fri Dec 13</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>16</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>3 PM - 5 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Thurs Dec 12</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>17</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Fri Dec 13</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>5:30 PM - 7:30 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>18</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Thurs Dec 12</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>19</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Thurs Dec 12</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>20</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		</tr>
+		<tr valign=top>
+		<td style="border-style: inset;">
+		<p>21</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Wed Dec 11</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Mon Dec 9</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>Tue Dec 10</p>
+		</td>
+		<td style="border-style: inset;">
+		<p>8 PM - 10 PM</p>
+		</td>
+		<td style="border-style: inset;"><br>
+		</td>
+		</tr>
+		<tr valign=top>
+
+
+		</tr>
+		</table>
+</div>
+	 
+			
+{% endblock %}

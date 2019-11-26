@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron text-left" style="background-color: white">
+	<h1 style="text-align:center;color: white">k</h1>
+<div align="center">
+ <form method="post">
+    <table cellpadding = 1 cellspacing = 2>
+      <tr>
+        <th>Class day(s)</th>
+        <th>Start time</th>
+      </tr>
+      <tr>
+        <td><select name="days" id = "days" required>
+          <option value="M">M</option>
+          <option value="MW">MW</option>
+          <option value="MWF">MWF</option>
+          <option value="MF">MF</option>
+          <option value="Tu">Tu</option>
+          <option value="TuTh">TuTh</option>
+          <option value="W">W</option>
+          <option value="WF">WF</option>
+          <option value="Th">Th</option>
+          <option value="F">F</option>
+          <option value="FS">FS</option>
+        </select></td>
+        <td><input name="start_time" id="start_time" maxlength="5" pattern="([0-9]|1[0-2]):[0-5][0-9]" placeholder=" hh:mm" required></td>
+        <td><select name="ampm">
+           <option value="pm">pm</option>
+           <option value="am">am</option>
+         </select></td>
+         <td><input type="submit" value="Get final time" id="final time"></td>
+      </tr>
+      
+    </table> 
+  </form>
+</div>
+{% endblock %}
