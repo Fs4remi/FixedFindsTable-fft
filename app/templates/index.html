@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="./public/club.css" rel="stylesheet">
+    <title>CSUEB Finals</title>
+</head>
+<body>
+    <nav> 
+        <div class = "navLinks">
+            <img src="./public/undraw_exams_g4ow.svg" alt ="Final Exams" id = 'navImage'>
+        </div> 
+        <div class = "navLinks">
+            <a href="https://www.w3schools.com/html/html_links.asp">verify the time</a>
+        </div>
+        <div class = "navLinks" >
+            <a href="https://www.csueastbay.edu/students/academics-and-studying/finals/index.html" target="_blank">school website</a>
+        </div>
+    </nav>
+    <main>
+        <div id = header>
+            <h2 id = pageHeading>Find out when your final exam</h2>
+        </div>
+        <div id = "selectionContainer">
+            <form id = selections>
+                <label class = "daysLabel">class days ✍</label>
+                <select name="s" class = days>
+                    <option value="M">M</option>
+                    <option value="MW">M W</option>
+                    <option value="MF">M F</option>
+                    <option value="MWF">M W F</option>
+                    <option value="MF">M F</option>
+                    <option value="Tu">Tu</option>
+                    <option value="Th">Th</option>
+                    <option value="TuTh">Tu Th</option>
+                    <option value="W">W</option>
+                    <option value="WF">W F</option>
+                    <option value="F">F</option>
+                    <option value="FS">F S</option>
+                  </select>
+    
+                  <label class = "timeLabel" >class start time 🕚</label>
+                  <input type = "text" class = "time" id = "timeInput" maxlength="5" pattern="([0-9]|1[0-2]):[0-5][0-9]"required>
+
+                  <label class = "ampmLabel">am  pm</label>
+                  <label class="ampm" id = "switch">
+                    <input type="checkbox" name="am">
+                    <span class="slider round"></span>
+                  </label>
+
+                  <button class="submitButt">check</button>
+            </form>
+        </div>
+        <div id = "response">
+            For your M W class starting at 1:30 pm, the final is going to be Monday 1:45 pm to 3:45 pm
+        </div>
+    </main>
+    <footer id = "footer">&copy; Fatemeh and Jon Project 🧐</footer>
+</body>
+</html>
