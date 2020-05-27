@@ -1,12 +1,28 @@
-<!doctype html>
-<title>Fixed Finals Table</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<section class="content">
-  <header>
-    Fixed Finals Table
-  </header>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  {% block content %}{% endblock %}
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="{{ url_for('static', filename='club.css') }}" rel="stylesheet">
+    <title>CSUEB Finals</title>
+</head>
+
+<body>
+  <nav> 
+    <div class = "navLinks">
+        <img src="{{ url_for('static', filename='undraw_exams_g4ow.svg') }}" alt ="Final Exams" id = 'navImage'>
+    </div> 
+    <div class = "navLinks">
+        <a href="https://www.w3schools.com/html/html_links.asp">verify the time</a>
+    </div>
+    <div class = "navLinks" >
+        <a href="https://www.csueastbay.edu/students/academics-and-studying/finals/index.html" target="_blank">school website</a>
+    </div>
+  </nav>
+
+
+  {% block main %} {% endblock %}
+
+  <footer id = "footer">&copy; Fatemeh and Jon Project 🧐</footer>
+</body>
+</html>
