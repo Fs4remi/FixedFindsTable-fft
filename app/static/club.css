@@ -82,9 +82,18 @@ main {
 }
 
 #response{
-    border: 1px solid black;
     height: 100px;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+
+    text-align: center;
+}
+
+#disclaimer{
+    height: 150px;
     text-align: center;
 }
 
