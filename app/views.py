@@ -21,7 +21,7 @@ def index():
         print(request.form.get("day"))
 
         return redirect(request.url)
-
+    info = hi()
     return render_template("index.html", index = titles["index"], info = info)
 
 @app.route("/about")
