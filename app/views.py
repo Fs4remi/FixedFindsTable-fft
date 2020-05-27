@@ -1,4 +1,5 @@
-from app import app 
+from app import app
+from app.scraper import scrape
 
 from flask import render_template, request, redirect
 
@@ -9,7 +10,7 @@ titles["index"]= "Find out when your final exam is"
 
 @app.route("/", methods=["GET","POST"])
 def index():
-    info = "v"
+    df, info = scrape("fall")
     if request.method == "POST":
         req = request.form
 
