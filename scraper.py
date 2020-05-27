@@ -71,7 +71,7 @@ def scrape(spring_summer_or_fall = "spring"):
 					df.loc[hour,days_class_meets] = col + ', ' + time_list[x]
 					if (hour+30) < end_time: #add half-hours too
 						df.loc[hour+30,days_class_meets] = col + ', ' + time_list[x]
-
+	return df
 
 if __name__ == "__main__":
 	print("aha, now it's importable...ish")
