@@ -6,15 +6,13 @@ import datetime
 def scrape(season):
 	"""returns a length 2 tuple.
 Index zero is the dataframe that is the lookup table, with indicies being the time in half-hour increments written as an integer that combines the hour and minutes from a 24 hour clock (1234 would refer to 12:34 pm).
-Index one contains the date of the day of the last exam accounted for by the present dataframe."""
+Index one contains a datetime object referring to the Saturday after the Friday in the aforementioned dataframe."""
 	table_df = pd.read_html("http://www.csueastbay.edu/students/academics-and-studying/finals/"+season+".html")[0]
 
 	#get clean dates from table...
 	clean_headers = ['Times']
 	for x in table_df.columns[1:]:
-		date = x[:3]
-		date += re.findall(', ...', x)[0]
-		date += ' ' + re.findall('\d+', x)[0]
+		date = re.findall('\w+, \w+ \d+', x)[0]
 		if date[-2] in [' ', '2', '3'] and date[-1] in ['1','2','3']:
 			if date[-1] == '1':
 				date += 'st'
@@ -25,9 +23,11 @@ Index one contains the date of the day of the last exam accounted for by the pre
 		else:
 			date += 'th'
 		clean_headers.append(date)
-	friday_final_date = table_df.columns[-1]
-	print(friday_final_date)
-	print(type(friday_final_date))	
+	saturday_after_finals = re.findall("\w+ \d+, \d+",table_df.columns[-1])[0]
+	saturday_after_finals = datetime.datetime.strptime(saturday_after_finals, "%B %d, %Y")
+	saturday_after_finals += datetime.timedelta(days=1)
+	print(saturday_after_finals)
+	print(type(saturday_after_finals))
 	table_df.columns = clean_headers
 
 
@@ -80,7 +80,7 @@ Index one contains the date of the day of the last exam accounted for by the pre
 							df.loc[hour+70,days_class_meets] = col + ', ' + time_list[x]
 						else:
 							df.loc[hour+30,days_class_meets] = col + ', ' + time_list[x]
-	return (df, friday_final_date)
+	return (df, saturday_after_finals)
 
 def scrape_to_file(a_valid_semester):
 	df, date = scrape(a_valid_semester)
