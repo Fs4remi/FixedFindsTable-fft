@@ -1,17 +1,18 @@
 import pandas as pd
 import re #regular expressions
 import sys #to get access to command line args :D
+import datetime
 
 def scrape(season):
-
+	"""returns a length 2 tuple.
+Index zero is the dataframe that is the lookup table, with indicies being the time in half-hour increments written as an integer that combines the hour and minutes from a 24 hour clock (1234 would refer to 12:34 pm).
+Index one contains a datetime object referring to the Saturday after the Friday in the aforementioned dataframe."""
 	table_df = pd.read_html("http://www.csueastbay.edu/students/academics-and-studying/finals/"+season+".html")[0]
 
 	#get clean dates from table...
 	clean_headers = ['Times']
 	for x in table_df.columns[1:]:
-		date = x[:3]
-		date += re.findall(', ...', x)[0]
-		date += ' ' + re.findall('\d+', x)[0]
+		date = re.findall('\w+, \w+ \d+', x)[0]
 		if date[-2] in [' ', '2', '3'] and date[-1] in ['1','2','3']:
 			if date[-1] == '1':
 				date += 'st'
@@ -22,6 +23,11 @@ def scrape(season):
 		else:
 			date += 'th'
 		clean_headers.append(date)
+	saturday_after_finals = re.findall("\w+ \d+, \d+",table_df.columns[-1])[0]
+	saturday_after_finals = datetime.datetime.strptime(saturday_after_finals, "%B %d, %Y")
+	saturday_after_finals += datetime.timedelta(days=1)
+	print(saturday_after_finals)
+	print(type(saturday_after_finals))
 	table_df.columns = clean_headers
 
 
@@ -70,13 +76,17 @@ def scrape(season):
 					#days_class_meets is e.g. MWF or TuTh
 					df.loc[hour,days_class_meets] = col + ', ' + time_list[x]
 					if (hour+30) < end_time: #add half-hours too
-						df.loc[hour+30,days_class_meets] = col + ', ' + time_list[x]
-	return df
+						if hour % 100 == 30:
+							df.loc[hour+70,days_class_meets] = col + ', ' + time_list[x]
+						else:
+							df.loc[hour+30,days_class_meets] = col + ', ' + time_list[x]
+	return (df, saturday_after_finals)
 
 def scrape_to_file(a_valid_semester):
-	df = scrape(a_valid_semester)
+	df, date = scrape(a_valid_semester)
 	df.to_csv("./lookup_table.csv")
 	print('"lookup_table.csv" has been created!')
+	print('It will be useful until',date)
 
 def ask_for_scraper_input(valid_semesters):
 	for idx, val in enumerate(valid_semesters):
