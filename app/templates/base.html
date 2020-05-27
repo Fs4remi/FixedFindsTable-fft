@@ -21,8 +21,13 @@
   </nav>
 
 
-  {% block main %} {% endblock %}
-
+  <main>
+    <div id = header>
+        <h2 id = pageHeading>{% block title %} {% endblock %}</h2>
+    </div>
+    {% block main %} {% endblock %}
+</main>
+  
   <footer id = "footer">&copy; Fatemeh and Jon Project 🧐</footer>
 </body>
 </html>
