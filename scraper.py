@@ -2,7 +2,7 @@ import pandas as pd
 import re #regular expressions
 import sys #to get access to command line args :D
 
-def scrape(spring_summer_or_fall = "spring"):
+def scrape(season):
 
 	table_df = pd.read_html("http://www.csueastbay.edu/students/academics-and-studying/finals/"+season+".html")[0]
 
@@ -22,7 +22,6 @@ def scrape(spring_summer_or_fall = "spring"):
 		else:
 			date += 'th'
 		clean_headers.append(date)
-	print(clean_headers)
 	table_df.columns = clean_headers
 
 
@@ -74,14 +73,18 @@ def scrape(spring_summer_or_fall = "spring"):
 						df.loc[hour+30,days_class_meets] = col + ', ' + time_list[x]
 	return df
 
+def scrape_to_file(a_valid_semester):
+	df = scrape(a_valid_semester)
+	df.to_csv("./lookup_table.csv")
+	print('"lookup_table.csv" has been created!')
 
-def ask_for_input(valid_semesters):
+def ask_for_scraper_input(valid_semesters):
 	for idx, val in enumerate(valid_semesters):
 		print(str(idx) + ") " + val)
 	index = -1
-	while index >= len(valid_semesters) || index < 0:
-		index = int(input("Please enter an integer from the list above (0 to ",len(valid_semesters),"): "),sep="")
-	scraper(valid_semesters[index])
+	while index >= len(valid_semesters) or index < 0:
+		index = int(input("Please enter an integer from the list above (0 to "+str(len(valid_semesters)-1)+", inclusive): "))
+	scrape_to_file(valid_semesters[index])
 
 if __name__ == "__main__":
 	#if they have a winter semester again, we'll need to add that here
@@ -89,7 +92,7 @@ if __name__ == "__main__":
 	if len(sys.argv) > 1:
 		semester = sys.argv[1]
 		if semester in valid_semesters:
-			scraper(semester)
+			scrape_to_file(semester)
 		else:
 			print("The following are valid inputs:")
 			print("\n".join(valid_semesters),end="\n\n")
