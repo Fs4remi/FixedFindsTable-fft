@@ -1,5 +1,6 @@
 import pandas as pd
 import re #regular expressions
+import sys #to get access to command line args :D
 
 def scrape(spring_summer_or_fall = "spring"):
 
@@ -73,6 +74,27 @@ def scrape(spring_summer_or_fall = "spring"):
 						df.loc[hour+30,days_class_meets] = col + ', ' + time_list[x]
 	return df
 
+#if they have a winter semester again, we'll need to add that here
+valid_semesters = ["spring", "summer", "fall"]
+
+def ask_for_input():
+	for idx, val in enumerate(valid_semesters):
+		print(str(idx) + ") " + val)
+	index = -1
+	while index >= len(valid_semesters) || index < 0:
+		index = int(input("Please enter an integer from the list above (0 to ",len(valid_semesters),"): "),sep="")
+	scraper(valid_semesters[index])
+
 if __name__ == "__main__":
-	print("aha, now it's importable...ish")
-	#WIP
+	if len(sys.argv) > 1:
+		semester = sys.argv[1]
+		if semester in valid_semesters:
+			scraper(semester)
+		else:
+			print("The following are valid inputs:")
+			print("\n".join(valid_semesters),end="\n\n")
+			print(semester + " is invalid.", end="\n\n")
+			ask_for_scraper_input()
+	else:
+		print("Valid semesters:")
+		ask_for_scraper_input()
