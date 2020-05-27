@@ -35,7 +35,7 @@ def scrape(spring_summer_or_fall = "spring"):
 	time_increments = []
 	for hour in range(600,2300,100):
 		time_increments.append(hour)
-		time_increments.append(hour+30)
+		time_increments.append(hour+30) #add half hours too
 
 	df = pd.DataFrame(columns=list_of_days, index = time_increments)
 
