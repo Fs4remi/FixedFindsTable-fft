@@ -9,6 +9,10 @@
 
 #header {
     height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body{
@@ -84,7 +88,7 @@ main {
 #response{
     height: 100px;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
@@ -93,8 +97,23 @@ main {
 }
 
 #disclaimer{
-    height: 150px;
+    height: 100px;
     text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#errors{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#errors img{
+    width: 500px;
 }
 
 a:link {
