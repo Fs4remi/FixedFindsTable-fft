@@ -1,6 +1,7 @@
 from app import app
 from app.scraper import scrape
 import datetime
+import re
 
 from flask import render_template, request, redirect
 
@@ -29,25 +30,44 @@ def index():
 
 	if request.method == "POST":
 		print("such a post!")
-		req = request.form
-		response = "For classes that meet " 
-		response += req.get("day")
-		response += " starting at "
-		response += req.get("time") + " "
+		time = request.form.get("time")
+		days = request.form.get("day")
+		response1 = "For classes that meet " 
+		response1 += days
+		response1 += " starting at "
+		response1 += time
+		#convert time to number...
+		time_list = re.findall("\d+", time)
+		half_hour =  int(time_list[0]) * 100
+		if int(time_list[1]) > 30:
+			half_hour += 30
 		# Since the AM PM thing is a slider- a checkbox really - if ampm is a key with the value 'on' then it is pm
 		# if ampm is not a key, then the user has chosen AM
 		if "ampm" in request.form.keys():
-			response += "p"
+			response1 += " pm"
+			if half_hour < 1200:
+				half_hour += 1200
 		else:
-			response += "a"
-		response += "m"
-		response2 ="The final exam is normally on "
+			response1 += " am"
+		response2 ="The final exam is normally:"
 		#input lookup stuff here!
-		response2 += "Monday, May 13 at 2:45 pm to 4:45 pm"
+		try:
+			response3 = LOOKUP_TABLE.loc[half_hour, days]
+		except (KeyError):
+			response1 = "There are no classes that meet "
+			response1 += days
+			response1 += " starting at "
+			response1 += time
+			if half_hour >= 1200:
+				response1 += " pm"
+			else:
+				response1 += " am"
+			return render_template("index.html", index = titles["index"], info1 = response1, info2 = "", info3 = "")
+		#response3 = "Monday, May 13 at 2:45 pm to 4:45 pm"
 
-		return render_template("index.html", index = titles["index"], info1 = response, info2 = response2)
+		return render_template("index.html", index = titles["index"], info1 = response1, info2 = response2, info3 = response3)
 	else:
-		return render_template("index.html", index = titles["index"], info1 = "", info2 = "")
+		return render_template("index.html", index = titles["index"], info1 = "", info2 = "", info3 = "")
 
 @app.route("/about")
 def about():
