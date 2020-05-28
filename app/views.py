@@ -20,12 +20,20 @@ def index():
 
 	#choose the correct finals table! yay!
 	today = datetime.date.today()
-	if EXPIRY_DATE is None or today > EXPIRY_DATE:
+	if EXPIRY_DATE is None:
 		season = "fall"
 		if today.month <= 6:
 			season = "spring"
 		elif today.month <= 9:
 			season = "summer"
+			FINALS_LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
+
+	if today > EXPIRY_DATE:
+		season = "spring"
+		if EXPIRY_DATE.month <= 6:
+			season = "summer"
+		elif EXPIRY_DATE.month <= 9:
+			season = "fall"
 			FINALS_LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
 
 	if request.method == "POST":
