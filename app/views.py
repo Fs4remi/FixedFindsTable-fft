@@ -16,7 +16,6 @@ LOOKUP_TABLE = None
 def index():
 	global EXPIRY_DATE
 	global LOOKUP_TABLE
-	info = "hi"
 
 	#choose the correct finals table! yay!
 	today = datetime.date.today()
@@ -38,9 +37,9 @@ def index():
 		print(request.form.get("time"))
 		print(request.form.get("day"))
 
-		return redirect(request.url)
+		return render_template("index.html", index = titles["index"], info = "you posted a thing! woo!")
 
-	return render_template("index.html", index = titles["index"], info = info)
+	return render_template("index.html", index = titles["index"], info = "")
 
 @app.route("/about")
 def about():
