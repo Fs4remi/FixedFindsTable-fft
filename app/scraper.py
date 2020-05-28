@@ -31,6 +31,7 @@ Index one contains a datetime object referring to the Saturday after the Friday 
 
 	#Storing the time ranges of the finals:
 	time_list = list(table_df['Times'])
+	num_season_time_slots = len(time_list)
 	classtimes_to_finalexamhour_dict={}
 
 	list_of_days=['MWF','MW','M','MF','TuTh','Tu','WF','W','Th','FS','F']
@@ -44,7 +45,7 @@ Index one contains a datetime object referring to the Saturday after the Friday 
 
 	class_to_final_dict = {}
 	for col in table_df.columns[1:]: #dates
-		for x in range(0,6): #there are 6 possible final time intervals
+		for x in range(0,num_season_time_slots):
 			class_DTs = table_df.loc[x,col]
 			lookup_set = re.findall("\w+ [0-9]+:?[0-9]*-[0-9]+:[0-9]+ [ap]m", class_DTs) #turn the box of time ranges from the CSUEB finals table into a list of strings
 			for y in lookup_set: #GETS EACH STR IN THE LIST JUST CREATED OUT OF TABLE ENTRY
