@@ -32,11 +32,26 @@
             <span class="slider round"></span>
             </label>
 
-            <button class="submitButt">check</button>
+            <script src = "../static/app.js"></script>
+            <button class="submitButt" onclick="openResponse()">check</button>
+
+            <script src = "../static/app.js"></script>
     </form>
 </div>
+
 <div id = "response">
-    {{ info }}
+    <div>
+        Your class meets Mondays and Wednesdays at 2:30 pm
+    </div>
+    <div>
+        Your final exam will be on Monday, May 13 at 2:45 pm to 4:45 pm
+    </div>
+    
 </div>
 
+<div id = "disclaimer">
+    <p>
+        Check with your teacher or sylabous because teachers have the right to change their final exam time
+    </p>
+</div>
 {% endblock %}

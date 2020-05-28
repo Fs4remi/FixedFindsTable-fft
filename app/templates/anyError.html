@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ error }}
+{% endblock %}
+
+{% block main %}
+<div id = "errors">
+    <div>
+        sorry, we couldn't find what you were looking for.
+    </div>
+    <div>
+        <img src = "{{ url_for('static', filename='undraw_page_not_found_su7k.svg') }}">
+    </div>
+</div>
+{% endblock %}
