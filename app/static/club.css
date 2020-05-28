@@ -104,6 +104,10 @@ main {
     justify-content: center;
 }
 
+#aboutBox{
+    text-align: center;
+}
+
 #errors{
     display: flex;
     flex-direction: column;
