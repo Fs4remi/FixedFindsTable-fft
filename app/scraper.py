@@ -26,8 +26,6 @@ Index one contains a datetime object referring to the Saturday after the Friday 
 	saturday_after_finals = re.findall("\w+ \d+, \d+",table_df.columns[-1])[0]
 	saturday_after_finals = datetime.datetime.strptime(saturday_after_finals, "%B %d, %Y")
 	saturday_after_finals += datetime.timedelta(days=1)
-	print(saturday_after_finals)
-	print(type(saturday_after_finals))
 	table_df.columns = clean_headers
 
 
@@ -80,7 +78,7 @@ Index one contains a datetime object referring to the Saturday after the Friday 
 							df.loc[hour+70,days_class_meets] = col + ', ' + time_list[x]
 						else:
 							df.loc[hour+30,days_class_meets] = col + ', ' + time_list[x]
-	return (df, saturday_after_finals)
+	return (df, saturday_after_finals.date())
 
 def scrape_to_file(a_valid_semester):
 	df, date = scrape(a_valid_semester)
