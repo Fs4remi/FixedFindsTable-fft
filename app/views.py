@@ -6,9 +6,9 @@ import re
 from flask import render_template, request, redirect
 
 titles =  dict()
-titles["about"]= "Let's vetify the time"
+titles["about"]= "Vetify the time"
 titles["index"]= "Find out when your final exam is"
-
+titles["error"]= "Page Not Found"
 
 EXPIRY_DATE = None
 FINALS_LOOKUP_TABLE = None
@@ -70,3 +70,7 @@ def index():
 @app.route("/about")
 def about():
 	return render_template("about.html", about = titles["about"])
+
+@app.errorhandler(404)
+def error(e):
+	return render_template("anyError.html", error = titles["error"])
