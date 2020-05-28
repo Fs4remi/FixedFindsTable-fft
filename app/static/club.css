@@ -88,7 +88,6 @@ main {
 #response{
     height: 100px;
 
-    display: none;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;

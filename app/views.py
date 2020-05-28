@@ -28,18 +28,26 @@ def index():
 		LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
 
 	if request.method == "POST":
+		print("such a post!")
 		req = request.form
-
+		response = "For classes that meet " 
+		response += req.get("day")
+		response += " starting at "
+		response += req.get("time") + " "
 		# Since the AM PM thing is a slider- a checkbox really - if ampm is a key with the value 'on' then it is pm
 		# if ampm is not a key, then the user has chosen AM
 		if "ampm" in request.form.keys():
-			print ("PM")
-		print(request.form.get("time"))
-		print(request.form.get("day"))
+			response += "p"
+		else:
+			response += "a"
+		response += "m"
+		response2 ="The final exam is normally on "
+		#input lookup stuff here!
+		response2 += "Monday, May 13 at 2:45 pm to 4:45 pm"
 
-		return render_template("index.html", index = titles["index"], info = "you posted a thing! woo!")
-
-	return render_template("index.html", index = titles["index"], info = "")
+		return render_template("index.html", index = titles["index"], info1 = response, info2 = response2)
+	else:
+		return render_template("index.html", index = titles["index"], info1 = "", info2 = "")
 
 @app.route("/about")
 def about():
