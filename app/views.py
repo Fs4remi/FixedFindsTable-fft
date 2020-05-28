@@ -1,5 +1,6 @@
 from app import app
 from app.scraper import scrape
+import datetime
 
 from flask import render_template, request, redirect
 
@@ -8,9 +9,25 @@ titles["about"]= "Let's vetify the time"
 titles["index"]= "Find out when your final exam is"
 
 
+EXPIRY_DATE = None
+LOOKUP_TABLE = None
+
 @app.route("/", methods=["GET","POST"])
 def index():
-	df, info = scrape("fall")
+	global EXPIRY_DATE
+	global LOOKUP_TABLE
+	info = "hi"
+
+	#choose the correct finals table! yay!
+	today = datetime.date.today()
+	if EXPIRY_DATE is None or today > EXPIRY_DATE:
+		season = "fall"
+		if today.month <= 6:
+			season = "spring"
+		elif today.month <= 9:
+			season = "summer"
+		LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
+
 	if request.method == "POST":
 		req = request.form
 
