@@ -3,7 +3,7 @@
 }
 
 #navImage {
-    width : 150px;
+    width : 110px;
     margin-left: 10px;
 }
 
@@ -17,6 +17,8 @@
 
 body{
     background-color: white;
+
+    width: 100%;
    
     display: flex;
     flex-direction: column;
@@ -106,6 +108,16 @@ main {
 
 #aboutBox{
     text-align: center;
+
+    margin: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutBox div{
+    width: 80%;
 }
 
 #errors{
@@ -117,6 +129,10 @@ main {
 
 #errors img{
     width: 500px;
+}
+
+#aboutBox{
+
 }
 
 a:link {
@@ -194,7 +210,7 @@ border-radius: 50%;
 footer{
 	text-align: center;
     font-size: 18px;
-    margin-top: 30px;
+    margin-top: 2%;
 } 
  
 nav {
@@ -205,24 +221,19 @@ nav {
     
     font-size: 18px;  
    
-    margin-top: 10px;
     width: 100%;
     justify-self: center;
 }
   
 .navLinks {
-    width: 180px;
+    width: 150px;
     height: 100%;
     display: flex;
     justify-content: flex-start;
 } 
 
 input:invalid {
-    border-color:rgba(231, 167, 83, 0.815);
-}
-
-input:valid {
-    border-color: #FFD700;
+    border-color: red;
 }
 
 
