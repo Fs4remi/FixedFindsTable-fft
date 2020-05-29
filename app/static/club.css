@@ -119,10 +119,6 @@ main {
     align-items: center;
 }
 
-#aboutBox div{
-    width: 80%;
-}
-
 #errors{
     display: flex;
     flex-direction: column;
@@ -247,3 +243,6 @@ input:invalid {
 }
 
 
+div{
+    max-width: 80em;
+}
