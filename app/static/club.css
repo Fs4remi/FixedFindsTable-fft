@@ -31,19 +31,20 @@ body{
 }
 
 main {
-    width: 900px;
+    width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 60px;
 
-    margin-top: 35px;
+    margin-top: 5%;
 
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
 }
 
 #selections{
-    padding-left: 10px;
-
     justify-content: center;
     
     display: grid;
@@ -89,6 +90,7 @@ main {
 
 #response{
     height: 100px;
+    width: 50%;
 
     flex-direction: column;
     justify-content: center;
@@ -99,6 +101,7 @@ main {
 
 #disclaimer{
     height: 100px;
+    width: 50%;
     text-align: center;
 
     display: flex;
@@ -107,7 +110,7 @@ main {
 }
 
 #aboutBox{
-    text-align: center;
+    text-align: left;
 
     margin: 5%;
 
@@ -128,7 +131,14 @@ main {
 }
 
 #errors img{
-    width: 500px;
+    width: 60%;
+}
+
+#errorImageBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #aboutBox{
@@ -226,7 +236,7 @@ nav {
 }
   
 .navLinks {
-    width: 150px;
+    width: 130px;
     height: 100%;
     display: flex;
     justify-content: flex-start;
