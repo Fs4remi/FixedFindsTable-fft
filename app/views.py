@@ -2,6 +2,7 @@ from app import app
 from app.scraper import scrape
 import datetime
 import re
+import pandas
 
 from flask import render_template, request, redirect
 
@@ -10,31 +11,14 @@ titles["about"]= "About this website"
 titles["index"]= "Find out when your final exam is"
 titles["error"]= "Page Not Found"
 
-EXPIRY_DATE = None
 FINALS_LOOKUP_TABLE = None
 
 @app.route("/", methods=["GET","POST"])
 def index():
-	global EXPIRY_DATE
 	global FINALS_LOOKUP_TABLE
 
-	#choose the correct finals table! yay!
-	today = datetime.date.today()
-	if EXPIRY_DATE is None:
-		season = "fall"
-		if today.month <= 6:
-			season = "spring"
-		elif today.month <= 9:
-			season = "summer"
-			FINALS_LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
-
-	if today > EXPIRY_DATE:
-		season = "spring"
-		if EXPIRY_DATE.month <= 6:
-			season = "summer"
-		elif EXPIRY_DATE.month <= 9:
-			season = "fall"
-			FINALS_LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
+	if FINALS_LOOKUP_TABLE is None:
+		FINALS_LOOKUP_TABLE = pandas.read_csv("./app/lookup_table.csv", index_col=0)
 
 	if request.method == "GET":
 		return render_template("index.html", index = titles["index"], info1 = "", info2 = "", info3 = "")
