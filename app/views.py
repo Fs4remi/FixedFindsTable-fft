@@ -58,7 +58,7 @@ def index():
 				half_hour += 1200
 		else:
 			response1 += " am"
-		response2 ="The final exam is normally:"
+		response2 ="The final exam is:"
 		try:
 			response3 = FINALS_LOOKUP_TABLE.loc[half_hour, days]
 			if type(response3) != type("string"):
