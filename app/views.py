@@ -37,7 +37,6 @@ def index():
 			FINALS_LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
 
 	if request.method == "POST":
-		print("such a post!")
 		time = request.form.get("time")
 		days = request.form.get("day")
 		response1 = "For classes that meet " 
