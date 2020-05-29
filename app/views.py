@@ -20,7 +20,7 @@ def index():
 
 	#choose the correct finals table! yay!
 	today = datetime.date.today()
-	if EXPIRY_DATE is None or today > EXPIRY_DATE:
+	if EXPIRY_DATE is None:
 		season = "fall"
 		if today.month <= 6:
 			season = "spring"
@@ -28,8 +28,17 @@ def index():
 			season = "summer"
 			FINALS_LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
 
-	if request.method == "POST":
-		print("such a post!")
+	if today > EXPIRY_DATE:
+		season = "spring"
+		if EXPIRY_DATE.month <= 6:
+			season = "summer"
+		elif EXPIRY_DATE.month <= 9:
+			season = "fall"
+			FINALS_LOOKUP_TABLE, EXPIRY_DATE = scrape(season)
+
+	if request.method == "GET":
+		return render_template("index.html", index = titles["index"], info1 = "", info2 = "", info3 = "")
+	elif request.method == "POST":
 		time = request.form.get("time")
 		days = request.form.get("day")
 		response1 = "For classes that meet " 
@@ -49,9 +58,11 @@ def index():
 				half_hour += 1200
 		else:
 			response1 += " am"
-		response2 ="The final exam is normally:"
+		response2 ="The final exam is:"
 		try:
 			response3 = FINALS_LOOKUP_TABLE.loc[half_hour, days]
+			if type(response3) != type("string"):
+				raise KeyError
 		except (KeyError):
 			response1 = "There are no classes that meet "
 			response1 += days
@@ -64,8 +75,6 @@ def index():
 			response2 = ""
 			response3 = ""
 		return render_template("index.html", index = titles["index"], info1 = response1, info2 = response2, info3 = response3)
-	else:
-		return render_template("index.html", index = titles["index"], info1 = "", info2 = "", info3 = "")
 
 @app.route("/about")
 def about():

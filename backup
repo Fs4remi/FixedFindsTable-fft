@@ -1,0 +1,9 @@
+web: gunicorn run:app
+web: gunicorn run.wsgi
+web: gunicorn flask run
+
+https://devcenter.heroku.com/articles/getting-started-with-python
+web: gunicorn hello:app
+
+web: gunicorn -w 4 -b 0.0.0.0:80 -k gevent main:app
+heroku ps:scale web=1
