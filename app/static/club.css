@@ -244,5 +244,8 @@ input:invalid {
 
 
 div{
+	min-height: 100px;
     max-width: 80em;
+    margin: 1%;
+    padding: 1%;
 }
