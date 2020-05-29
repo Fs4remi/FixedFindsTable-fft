@@ -6,7 +6,7 @@ import re
 from flask import render_template, request, redirect
 
 titles =  dict()
-titles["about"]= "Vetify the time"
+titles["about"]= "About this website"
 titles["index"]= "Find out when your final exam is"
 titles["error"]= "Page Not Found"
 
