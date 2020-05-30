@@ -6,11 +6,9 @@
 
 {% block main %}
 <div id = "errors">
-    <div>
+    <p>
         sorry, we couldn't find what you were looking for.
-    </div>
-    <div>
-        <img src = "{{ url_for('static', filename='undraw_page_not_found_su7k.svg') }}">
-    </div>
+    </p>
+    <img src = "{{ url_for('static', filename='undraw_page_not_found_su7k.svg') }}" id = "errorImageBox">
 </div>
 {% endblock %}
