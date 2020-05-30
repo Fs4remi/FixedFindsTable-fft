@@ -45,6 +45,7 @@ a:link {
     text-decoration: none;
 }
 
+
 main {
     width: 90%;
     min-width: 375;
@@ -219,13 +220,15 @@ border-radius: 50%;
 
 #aboutBox{
     width: 90%;
-    min-height: 200px; 
+    min-height: 250px; 
 
+    margin-bottom: 3%;
     text-align: left;
     font-size: 14px;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: flex-start;
 }
 
@@ -236,3 +239,104 @@ footer{
 
     min-width: 375px;
 } 
+
+@media only screen and (min-device-width: 1000px) { 
+    body{
+        font-size: 18px;
+    }
+    nav {
+        margin-top: 0;
+    }
+    nav a{
+        font-weight: bold;
+        color:black;
+    }
+    #navImage {
+        width : 150px;
+    }  
+    .navLinks {
+        width: 160px;
+        height: 100%;
+    
+        font-size: 18px;
+    
+        display: flex;
+        justify-content: flex-start;
+    }    
+    a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: none;
+    } 
+    main {
+        width: 60%;
+        margin-top: 0;
+    }
+    #header p {
+        text-align: center;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    #selectionContainer{
+        width: 90%;
+        min-width: 360px;
+        min-height: 200px;
+    }
+    #selections{
+        justify-content: center;
+        
+        display: grid; 
+        row-gap: 20%;
+        column-gap: 5%;
+        grid-template-columns: 35% 55% 25%;
+        grid-template-rows: 25% 41% 35%;
+        grid-template-areas: 
+        " daysLabel timeLabel ampmLabel"
+        "  days time ampm "
+        " . . submitButt";
+    }
+    .days option{
+        font-size: 16px;
+    }
+    .submitButt {
+        grid-area: submitButt;
+        font-size: 16px; 
+
+        border-color:azure;
+    }
+    .labelStyle{
+        font-size: 18px;
+    }
+
+    #response{
+        width: 90%;
+        min-height: 200px;
+    }
+
+    .resInfo{
+        font-weight: 18px;
+        line-height: 24px;
+    }
+    
+    #disclaimer{
+        width: 90%; 
+        min-height: 100px;
+
+        font-size: 18px;
+        color: blue;
+    }
+    #aboutBox{
+        width: 90%;
+        height: 200px;
+
+        line-height: 24px;
+        font-size: 18px;
+    }
+
+    footer{
+        font-size: 18px;
+        margin-top: 3%;
+
+        width: 90%;
+    } 
+}
