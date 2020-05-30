@@ -30,7 +30,7 @@ nav {
 }
 
 .navLinks {
-    width: 90px;
+    min-width: 90px;
     height: 100%;
 
     font-size: 12px;
@@ -47,13 +47,14 @@ a:link {
 
 main {
     width: 90%;
+    min-width: 375;
+    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 60px;
 
     margin-top: 5%;
-
-    width: 90%;
-    min-width: 375;
+   
+    line-height: 24px;
      
     display: flex;
     flex-direction: column;
@@ -119,12 +120,12 @@ main {
 }
 
 .days option{
-    font-size: 18px;
+    font-size: 14px;
     font-weight: lighter;
 }
 
 .labelStyle{
-    
+    font-size: 14px;
 }
 
 /* Copied from W3SCHOOL */
@@ -213,6 +214,19 @@ border-radius: 50%;
 
     font-size: 12px;
     color: blue;
+}
+
+
+#aboutBox{
+    width: 90%;
+    min-height: 200px; 
+
+    text-align: left;
+    font-size: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 footer{
