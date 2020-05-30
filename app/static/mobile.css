@@ -1,0 +1,342 @@
+body{
+    background-color: white;
+
+    width: 100%;
+    min-width: 375;
+   
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    
+    font-family: sans-serif; 
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:left;
+    align-items: center; 
+   
+    margin-top: 3%;
+    width: 100%;
+    justify-self: center;
+}
+
+#navImage {
+    width : 80px;
+}
+
+.navLinks {
+    min-width: 90px;
+    height: 100%;
+
+    font-size: 12px;
+
+    display: flex;
+    justify-content: flex-start;
+} 
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+
+main {
+    width: 90%;
+    min-width: 375;
+    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 60px;
+
+    margin-top: 5%;
+   
+    line-height: 24px;
+     
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
+}
+
+#header {
+    min-height: 100px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header p {
+    text-align: center;
+    font-weight: bold;
+}
+
+#selectionContainer{
+    width: 90%;
+    min-width: 360px;
+    min-height: 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+#selections{
+    justify-content: center;
+    
+    display: grid; 
+    row-gap: 20%;
+    column-gap: 5%;
+    grid-template-columns: 30% 35% 20%;
+    grid-template-rows: 25% 41% 30%;
+    grid-template-areas: 
+    " daysLabel timeLabel ampmLabel"
+    "  days time ampm "
+    " . . submitButt";
+}
+
+.days{
+    grid-area: days;
+    justify-content: center;
+}
+
+.submitButt {
+    grid-area: submitButt;
+}
+
+.time {
+    grid-area: time;
+}
+
+.ampm {
+    grid-area: ampm; 
+    text-justify: center;
+}
+
+.days option{
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.labelStyle{
+    font-size: 14px;
+}
+
+/* Copied from W3SCHOOL */
+#switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+}
+
+/* Hide default HTML checkbox */
+#switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+/* The slider */
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+position: absolute;
+content: "";
+height: 26px;
+width: 26px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+input:checked + .slider {
+background-color: #2196F3;
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
+#response{
+    width: 90%;
+    min-height: 110px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+
+    text-align: center;
+}
+
+#disclaimer{
+    width: 90%;
+    min-width: 360;
+    min-height: 110px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    color: blue;
+}
+
+
+#aboutBox{
+    width: 90%;
+    min-height: 250px; 
+
+    margin-bottom: 3%;
+    text-align: left;
+    font-size: 14px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+footer{
+	text-align: center;
+    font-size: 12px;
+    margin-top: 10%;
+
+    min-width: 375px;
+} 
+
+@media only screen and (min-device-width: 1000px) { 
+    body{
+        font-size: 18px;
+    }
+    nav {
+        margin-top: 0;
+    }
+    nav a{
+        font-weight: bold;
+        color:black;
+    }
+    #navImage {
+        width : 150px;
+    }  
+    .navLinks {
+        width: 160px;
+        height: 100%;
+    
+        font-size: 18px;
+    
+        display: flex;
+        justify-content: flex-start;
+    }    
+    a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: none;
+    } 
+    main {
+        width: 60%;
+        margin-top: 0;
+    }
+    #header p {
+        text-align: center;
+        font-weight: bold;
+        font-size: 26px;
+    }
+    #selectionContainer{
+        width: 90%;
+        min-width: 360px;
+        min-height: 200px;
+    }
+    #selections{
+        justify-content: center;
+        
+        display: grid; 
+        row-gap: 20%;
+        column-gap: 5%;
+        grid-template-columns: 35% 55% 25%;
+        grid-template-rows: 25% 41% 35%;
+        grid-template-areas: 
+        " daysLabel timeLabel ampmLabel"
+        "  days time ampm "
+        " . . submitButt";
+    }
+    .days option{
+        font-size: 16px;
+    }
+    .submitButt {
+        grid-area: submitButt;
+        font-size: 16px; 
+
+        border-color:azure;
+    }
+    .labelStyle{
+        font-size: 18px;
+    }
+
+    #response{
+        width: 90%;
+        min-height: 200px;
+    }
+
+    .resInfo{
+        font-weight: 18px;
+        line-height: 24px;
+    }
+    
+    #disclaimer{
+        width: 90%; 
+        min-height: 100px;
+
+        font-size: 18px;
+        color: blue;
+    }
+    #aboutBox{
+        width: 90%;
+        height: 200px;
+
+        line-height: 24px;
+        font-size: 18px;
+    }
+
+    footer{
+        font-size: 18px;
+        margin-top: 3%;
+
+        width: 90%;
+    } 
+}

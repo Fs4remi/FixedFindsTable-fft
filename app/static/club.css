@@ -3,7 +3,7 @@
 }
 
 #navImage {
-    width : 150px;
+    width : 110px;
     margin-left: 10px;
 }
 
@@ -17,6 +17,8 @@
 
 body{
     background-color: white;
+
+    width: 100%;
    
     display: flex;
     flex-direction: column;
@@ -29,19 +31,20 @@ body{
 }
 
 main {
-    width: 900px;
+    width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 60px;
 
-    margin-top: 35px;
+    margin-top: 5%;
 
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center
 }
 
 #selections{
-    padding-left: 10px;
-
     justify-content: center;
     
     display: grid;
@@ -87,6 +90,7 @@ main {
 
 #response{
     height: 100px;
+    width: 50%;
 
     flex-direction: column;
     justify-content: center;
@@ -97,6 +101,7 @@ main {
 
 #disclaimer{
     height: 100px;
+    width: 50%;
     text-align: center;
 
     display: flex;
@@ -105,7 +110,17 @@ main {
 }
 
 #aboutBox{
-    text-align: center;
+    text-align: left;
+
+    margin: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutBox div{
+    width: 80%;
 }
 
 #errors{
@@ -116,7 +131,18 @@ main {
 }
 
 #errors img{
-    width: 500px;
+    width: 60%;
+}
+
+#errorImageBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutBox{
+
 }
 
 a:link {
@@ -194,7 +220,7 @@ border-radius: 50%;
 footer{
 	text-align: center;
     font-size: 18px;
-    margin-top: 30px;
+    margin-top: 2%;
 } 
  
 nav {
@@ -205,24 +231,19 @@ nav {
     
     font-size: 18px;  
    
-    margin-top: 10px;
     width: 100%;
     justify-self: center;
 }
   
 .navLinks {
-    width: 180px;
+    width: 130px;
     height: 100%;
     display: flex;
     justify-content: flex-start;
 } 
 
 input:invalid {
-    border-color:rgba(231, 167, 83, 0.815);
-}
-
-input:valid {
-    border-color: #FFD700;
+    border-color: red;
 }
 
 

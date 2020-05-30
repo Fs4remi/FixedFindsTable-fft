@@ -7,7 +7,7 @@
 {% block main %}
 <div id = "selectionContainer">
     <form action = "/" method = "POST" id = selections>
-        <label class = "daysLabel">class days ✍</label>
+        <label class = "daysLabel labelStyle">days✍</label>
         <select name="day" class = "days">
             <option name="M">M</option>
             <option name="MW">MW</option>
@@ -23,10 +23,10 @@
             <option name="FS">FS</option>
             </select>
 
-            <label class = "timeLabel" >class start time 🕚</label>
+            <label class = "timeLabel labelStyle" >start time🕚</label>
             <input type = "text" class = "time" name = "time" maxlength="5" pattern="([0-9]|1[0-2]):[0-5][0-9]"required>
 
-            <label class = "ampmLabel">am  pm</label>
+            <label class = "ampmLabel labelStyle">am  pm</label>
             <label class="ampm" id = "switch">
                 <input type="checkbox" name="ampm">
             <span class="slider round"></span>
@@ -40,20 +40,20 @@
 </div>
 
 <div id = "response">
-	<p>
+	<p class = "resInfo">
     	{{ info1 }}
     </p>
-    <p>
+    <p class = "resInfo">
     	{{ info2 }}
     </p>
-    <p>
+    <p class = "resInfo">
     	{{ info3 }}
     </p>
 </div>
 
 <div id = "disclaimer">
     <p>
-        Comfirm dates and times with your professor as they are allowed to make changes to their final exam schedules
+        Make sure to comfirm dates and times with your professor! 
     </p>
 </div>
 {% endblock %}
