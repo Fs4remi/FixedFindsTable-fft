@@ -6,7 +6,7 @@
 
 {% block main %}
 <div id = "selectionContainer">
-    <form action = "/" method = "POST" id = selections>
+    <form action = "/" method = "POST" id = "selections">
         <label class = "daysLabel labelStyle">days✍</label>
         <select name="day" class = "days">
             <option name="M">M</option>
@@ -21,21 +21,18 @@
             <option name="WF">WF</option>
             <option name="F">F</option>
             <option name="FS">FS</option>
-            </select>
+        </select>
 
-            <label class = "timeLabel labelStyle" >start time🕚</label>
-            <input type = "text" class = "time" name = "time" maxlength="5" pattern="([0-9]|1[0-2]):[0-5][0-9]"required>
+        <label class = "timeLabel labelStyle" >start time🕚</label>
+        <input type = "text" class = "time" name = "time" maxlength="5" pattern="([0-9]|1[0-2]):[0-5][0-9]"required>
 
-            <label class = "ampmLabel labelStyle">am  pm</label>
-            <label class="ampm" id = "switch">
-                <input type="checkbox" name="ampm">
-            <span class="slider round"></span>
-            </label>
+        <label class = "ampmLabel labelStyle">am  pm</label>
+        <label class="ampm" id = "switch">
+            <input type="checkbox" name="ampm">
+        <span class="slider round"></span>
+        </label>
 
-            <script src = "../static/app.js"></script>
-            <button class="submitButt" onclick="openResponse()">check</button>
-
-            <script src = "../static/app.js"></script>
+        <button class="submitButt" form ="selections">check</button>
     </form>
 </div>
 
