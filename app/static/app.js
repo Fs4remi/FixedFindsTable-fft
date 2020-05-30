@@ -11,4 +11,6 @@ function openResponse(){
         console.log("closing");
     }
 }
+
+window.onload = openResponse;
  
