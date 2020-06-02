@@ -205,9 +205,7 @@ border-radius: 50%;
 
 #response{
     width: 90%;
-    min-height: 110px;
 
-    display: none;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
